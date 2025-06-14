@@ -26,7 +26,7 @@ const formSchema = z.object({
   password: z.string().min(1, { message: "Password is required" }),
 });
 
-export default function LoginForm() {
+export default function SignInForm() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
