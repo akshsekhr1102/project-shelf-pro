@@ -1,5 +1,17 @@
-import LoginForm from "@/components/forms/login-form";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
-export default function LoginPage() {
-  return <LoginForm />;
+import { auth } from "@/lib/auth";
+
+import SignInForm from "@/components/forms/signin-form";
+
+export default async function SignIn() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!!session) {
+    redirect("/");
+  }
+  return <SignInForm />;
 }

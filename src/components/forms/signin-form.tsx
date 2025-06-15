@@ -26,7 +26,7 @@ const formSchema = z.object({
   password: z.string().min(1, { message: "Password is required" }),
 });
 
-export default function LoginForm() {
+export default function SignInForm() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -103,7 +103,7 @@ export default function LoginForm() {
                                       <FormControl>
                                         <Input
                                           className="rounded-full py-6 px-4 border border-border"
-                                          placeholder="Full Name"
+                                          placeholder="email"
                                           {...field}
                                         />
                                       </FormControl>
