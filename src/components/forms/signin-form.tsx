@@ -103,7 +103,7 @@ export default function SignInForm() {
                                       <FormControl>
                                         <Input
                                           className="rounded-full py-6 px-4 border border-border"
-                                          placeholder="Full Name"
+                                          placeholder="email"
                                           {...field}
                                         />
                                       </FormControl>
